@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+        <script src="https://unpkg.com/ml5@0.1.3/dist/ml5.min.js" type="text/javascript"></script>
+        <script src="p5.js" type="text/javascript"></script>
+        <script src="p5.dom.js" type="text/javascript"></script>
+        <style>
+            @font-face {
+                font-family: Absender;
+                src: url(absender1.ttf);
+            }
+            #smile,#sad,#train,#save{
+                display: inline-block;
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translate(-225%, 50%);
+                text-transform: uppercase;
+                font-size: 23px;
+                font-family: Absender;
+                font-weight: 100;
+                border-radius: 10px;
+                padding: 10px 16px;
+                background-color: #ffffff;
+            }
+            #smile{
+                border: 2px solid #27acff;
+                color: #27acff;
+            }
+            #smile:hover{
+                color: #ffffff;
+                background-color: #27acff;
+            }
+            #sad{
+                border: 2px solid #ef1c54;
+                color: #ef1c54;
+                margin-left: 70px;
+            }
+            #sad:hover{
+                background-color: #ef1c54;
+                color: #ffffff;
+            }
+
+            #train{
+                margin-left: 220px;
+                border: 2px solid #1bc96b;
+                color:#1bc96b;
+            }
+            #train:hover{
+                background-color: #1bc96b;
+                color: #ffffff;
+            }
+            #error{
+                position: absolute;
+                top: 80%;
+                left:44%;
+
+            }
+            #save{
+                border: 2px solid #ef7905;
+                color: #ef7905;
+                margin-left: 310px;
+            }
+            #save:hover{
+                background-color:#ef7905;
+                color: #ffffff;
+            }
+            #training{
+                position: absolute;
+                top: 83%;
+                left: 44%;
+
+            }
+
+            #loadd,#trainn{
+                display: inline-block;
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translate(-105%, -200%);
+                text-transform: uppercase;
+                font-size: 23px;
+                font-family: Absender;
+                font-weight: 100;
+                border-radius: 10px;
+                padding: 14px 18px;
+                background-color: #ffffff;
+            }
+
+            #loadd{
+                margin-left: 170px;
+                background-color: transparent;
+                border: 2px solid #14c7b3;
+                color:#14c7b3;
+            }
+            #trainn{
+                border: 2px solid #14b93a;
+                background-color: transparent;
+                color:#14b93a;
+            }
+            #loadd:hover{
+                background-color: #1acbb6;
+                color:#fff;
+            }
+            #trainn:hover{
+                background-color: #14b93a;
+                color:#fff;
+            }
+
+            #texxt{
+                font-family: Absender;
+                color: black;
+                font-size: 50pt;
+                text-align: center;
+                transform: translate(0%, 100%);
+            }
+            .hide{
+                display: none;
+            }
+
+
+            input[type=submit]{
+                position: absolute;
+                left: 46%;
+                top: 78%;
+                width: 10%;
+                margin-top: 17px;
+                display: inline-block;
+                font-weight: 300;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                font-family: Absender;
+                padding: 10px 14px;
+                border-radius: 8px;
+                background-color: #15cc87;
+                border: 1px solid #24d994;
+                margin-bottom: 20px;
+                font-size: 13pt;
+            }
+
+            input[type=submit]:hover,
+            input[type=submit]:active{
+                background-color: #fff;
+                color: #24d994;
+            }
+            #input{
+                position: absolute;
+                left: 35%;
+                top:70%;
+                width: 30%;
+                padding: 7px;
+                border-radius: 3px;
+                margin-top: 6px;
+                border: 2px solid #19db5c;
+                margin-bottom: 7px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2 id="error"></h2>
+        <h2 id="training"></h2>
+        <h3 id="texxt">Image Classifier</h3>
+        <input type="text" name="model" id="input" placeholder="Paste file path to Model.json" required>
+        <input type="submit" id="send" value="Load" onclick="func()">
+    </body>
+    <script>
+    </script>
+    <script src = "facemodel.js" type="text/javascript"></script>
+</html>
